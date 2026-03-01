@@ -5,6 +5,8 @@
 Hold Right Click + Scroll to navigate tabs in Chrome, Edge, Firefox, VS Code, and more.  
 Portable. No installation. No admin rights required.
 
+![TabScroll Demo](TabScrollDemo.gif)
+
 ![Version](https://img.shields.io/badge/version-1.3-d4a847?style=flat-square&labelColor=1a1a1a)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%2B-0078d4?style=flat-square&labelColor=1a1a1a)
 ![AutoHotkey](https://img.shields.io/badge/AutoHotkey-v2.0-green?style=flat-square&labelColor=1a1a1a)
