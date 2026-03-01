@@ -1,59 +1,111 @@
-TabScroll 🖱️🔄
-A lightweight AutoHotkey v2 script that allows you to switch browser or application tabs instantly using your mouse's Right Button + Scroll Wheel.
+# TabScroll 🖱️
 
-🚀 Features
+**Switch browser tabs instantly with your mouse wheel — no keyboard, no extensions.**
 
-Efficient Tab Switching: Hold Right Click and scroll to navigate through tabs.
+Hold Right Click + Scroll to navigate tabs in Chrome, Edge, Firefox, VS Code, and more.  
+Portable. No installation. No admin rights required.
 
+![Version](https://img.shields.io/badge/version-1.3-d4a847?style=flat-square&labelColor=1a1a1a)
+![Platform](https://img.shields.io/badge/platform-Windows%2010%2B-0078d4?style=flat-square&labelColor=1a1a1a)
+![AutoHotkey](https://img.shields.io/badge/AutoHotkey-v2.0-green?style=flat-square&labelColor=1a1a1a)
+![License](https://img.shields.io/badge/license-MIT-5a5752?style=flat-square&labelColor=1a1a1a)
 
-Intelligent Intercept: Automatically detects if the active window supports tabs (works with Chrome, Edge, VS Code, etc.).
+---
 
+## How It Works
 
-On-Screen Display (OSD): A sleek, modern pill-shaped indicator showing how many tabs you've scrolled.
-+2
+| Gesture | Action |
+|---|---|
+| Hold `RButton` + Scroll Up | Next tab (→) |
+| Hold `RButton` + Scroll Down | Previous tab (←) |
+| Hold `RButton` + No scroll | Normal right-click menu |
+| Scroll without `RButton` | Normal page scroll |
 
+---
 
-Splash Screen: Professional branded startup screen.
-+1
+## Features
 
+- **Mouse-only gesture** — no keyboard shortcut needed
+- **Intelligent intercept** — only activates in windowed, tabbed apps; passes through in fullscreen and games
+- **On-Screen Display (OSD)** — sleek pill-shaped indicator shows direction and tab count
+- **Scroll threshold** — adjustable sensitivity to prevent accidental switching
+- **App blacklist** — exclude specific apps via `TabScroll.ini`
+- **Start with Windows** — toggle auto-launch from the tray menu, no admin rights needed
+- **Splash screen** — branded startup screen on launch
+- **System tray integration** — pause, configure, or quit from the taskbar
+- **Single instance** — re-running replaces the old instance automatically
 
-Start with Windows: Toggle auto-launch directly from the system tray menu.
-+1
+---
 
+## Installation
 
-System Tray Integration: Easily pause or quit the script from the taskbar.
-+1
+> ✅ **AutoHotkey is bundled** — you do not need to install anything separately.
 
-🛠️ Usage
+1. Download `TabScroll.zip` from [Releases](https://github.com/minhhust2905/TabScroll/releases/latest)
+2. Extract to any folder (Desktop, Documents, USB drive — anywhere)
+3. Run `TabScroll.lnk`
+4. *(Optional)* Right-click the tray icon → enable **Start with Windows**
 
-Switch to Next Tab: Hold Right Click + Scroll Up.
+---
 
+## Supported Apps
 
-Switch to Previous Tab: Hold Right Click + Scroll Down.
+Works with any windowed app that supports `Ctrl+Tab`:
 
+`Chrome` `Edge` `Firefox` `VS Code` `File Explorer` `Windows Terminal` `Notepad++` `Sublime Text` `Figma` `Postman` and more.
 
-Normal Right Click: Just click and release the Right Button without scrolling.
+> ⚠️ Does **not** activate in fullscreen or borderless-window mode (automatically bypassed).
 
+---
 
-Pause Script: Press Ctrl + Alt + P.
+## Configuration
 
+TabScroll creates `TabScroll.ini` automatically in its folder on first run.
 
-Quit Script: Press Ctrl + Alt + Q.
+```ini
+[Settings]
+StartWithWindows = 0       ; 1 = launch on boot
+ShowOSD          = 1       ; 1 = show OSD indicator
+ScrollThreshold  = 1       ; notches required per tab switch (1–3)
+Blacklist        = game.exe,photoshop.exe  ; comma-separated exe names
+```
 
-📦 Installation
-Ensure you have AutoHotkey v2.0+ installed.
+All settings can also be changed from the tray menu without editing the file manually.
 
-Download the TabScroll.ahk file and the resources/ folder (if any).
+---
 
-Run TabScroll.ahk.
+## Hotkeys
 
-(Optional) Right-click the tray icon and select "Start with Windows".
+| Hotkey | Action |
+|---|---|
+| `Ctrl + Alt + P` | Pause / Resume |
+| `Ctrl + Alt + Q` | Quit |
 
-📝 Configuration
-The script automatically creates a TabScroll.ini file in its directory to save your preferences, such as:
+---
 
-OSD visibility.
+## Compatibility
 
-Startup settings.
+| Scenario | Behavior |
+|---|---|
+| Fullscreen / borderless apps | Scroll passes through normally |
+| Anti-cheat games (Vanguard, EAC, BattlEye) | Automatically blocked by anti-cheat; resumes after game closes |
+| Razer Synapse / Logitech G Hub | May conflict — disable right-click assignments in mouse software |
+| Antivirus flag | False positive — source code is fully open for inspection |
 
-Created by Minh Edward (Vibe Coder)
+---
+
+## Links
+
+- 🌐 **Website** — [tabscroll.com](https://minhhust2905.github.io/TabScroll/)
+- 📖 **Full Documentation** — [tabscroll.com/docs](https://minhhust2905.github.io/TabScroll/docs.html)
+- 🐛 **Bug Reports** — [Open an issue](https://github.com/minhhust2905/TabScroll/issues)
+
+---
+
+## License
+
+MIT © 2026 Minh Edward
+
+> TabScroll hooks into Windows mouse and keyboard input at the system level.  
+> This may conflict with anti-cheat software or security tools. Use at your own risk.  
+> Full terms in [LICENSE](LICENSE).
