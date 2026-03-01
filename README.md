@@ -69,7 +69,7 @@ TabScroll creates `TabScroll.ini` automatically in its folder on first run.
 StartWithWindows = 0       ; 1 = launch on boot
 ShowOSD          = 1       ; 1 = show OSD indicator
 ScrollThreshold  = 1       ; notches required per tab switch (1–3)
-Blacklist        = game.exe,photoshop.exe  ; comma-separated exe names
+Blacklist        = game.exe,photoshop.exe  ; one app per line in the GUI editor
 ```
 
 All settings can also be changed from the tray menu without editing the file manually.
